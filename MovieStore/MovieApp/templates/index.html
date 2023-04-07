@@ -1,0 +1,37 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+</head>
+<body>
+    <div class = "mainContent">
+        <div id = "movieList" >
+            {% for Movie in movies %}
+                <h1>{{ Movie.name }}</h1>
+                <img src="{{ Movie.image.url }}" alt="">
+                <h2>{{ Movie.year }}</h2>
+                <button id = "buttonMovie">{{ Movie.name }}</button>
+            {% endfor %}
+        </div>
+            <div id = "modalWindow" >
+                <h1>дайте відгук нашому сайту</h1>
+                <p id = "Cross">&#10060</p>
+                <form method="post" id = "sentForm" action = "{% url 'movies' %}">
+                    {% csrf_token %}
+                    <input type="text" name="nameClient" placeholder="ваше прізвищє та ім'я" required>
+                    <textarea name ="message" cols="30" rows="10" placeholder="Ваш відгук на наш сайт" required> </textarea> 
+                    <button>Відправити</button>
+                </form> 
+            </div>
+        </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="{% static 'script.js' %}" defer></script>
+
+</body>
+</html>
+
