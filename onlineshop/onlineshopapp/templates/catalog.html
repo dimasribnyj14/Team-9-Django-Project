@@ -2,4 +2,12 @@
 
 {% block content %}
     <h1>Каталог</h1>
+    <div>
+        {% for product in Product %}
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <img src="{{ product.image.url }}" alt="">
+        <h2 id = "price"> {{ product.price }} ₴</h2>
+        {% endfor %}
+    </div>
 {% endblock %}

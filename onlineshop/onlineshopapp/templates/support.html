@@ -2,4 +2,10 @@
 
 {% block content %}
     <h1>Зворотній зв'язок</h1>
+    <form method = "POST" id = "messageForm" action = "{% url 'support' %}">
+        {% csrf_token %}
+        <input id = "name" type="text" name="nameClient" placeholder = "Ваше ім'я" required>
+        <textarea id = "message" rows="10" cols="30" name = "message" placeholder = "Ваше повідомлення" required></textarea>
+        <button>Відправити</button>
+    </form>
 {% endblock %}
