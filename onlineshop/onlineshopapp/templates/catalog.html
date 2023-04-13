@@ -2,6 +2,15 @@
 
 {% block content %}
     <h1>Каталог</h1>
+    <form id = "choice"method="POST">
+        {% csrf_token %}
+        <select name = "categoryChange">
+            <option value="Monitor">Монітор</option>
+            <option value="Camera">Фотоаппарат</option>
+            <option selected>Усі</option>
+        </select>
+        <button>Знайти</button>
+    </form> 
     <div>
         {% for product in Product %}
         <h1>{{ product.name }}</h1>

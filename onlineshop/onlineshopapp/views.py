@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from onlineshopapp.models import *
 from django.core.mail import send_mail
 from onlineshop.settings import EMAIL_HOST_USER
@@ -9,8 +9,17 @@ def show_about_us(request):
 
 def show_catalog(request):
     context = {
-        "Product": Product.objects.all()
+        "Camera": Product.objects.filter(category__name = "Camera"),
+        "Monitor": Product.objects.filter(category__name = "Monitor"),
+        "Product": Product.objects.all(),
     }
+    if request.method == "POST":
+        category_name = request.POST.get("categoryChange")
+        if category_name != "Усі":
+            context.update({"Product": Product.objects.filter(category__name = category_name)})
+        else:
+            context.update({"Product": Product.objects.all()})
+        # return redirect("catalog")
     return render(request,"catalog.html", context = context)
         
 def show_main(request):
