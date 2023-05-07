@@ -2,4 +2,12 @@
 
 {% block content %}
     <h1>Головна</h1>
+    <br>
+    <h1>Рекомендуємо</h1>
+    {% for recommend in Recommend %}
+        <h1>{{ recommend.name }}</h1>
+        <p>{{ recommend.description }}</p>
+        <img src="{{ recommend.image.url }}" alt="">
+        <h2 id = "price">{{ recommend.price }} ₴</h2>
+    {% endfor %} 
 {% endblock %}

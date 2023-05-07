@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+
+img {
+    width: 200px;
+    height: 190px;
+    border: 0;
+    border-radius: 10px;
+
+}
+
+h3 {
+    color: green;
+    font-size: x-large;
+
+}
+
+p {
+    width: 500px;
+
+}
+
+button {
+    transition-duration: 400ms;
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px 0 rgb(220, 255, 255);
+    background-color: rgb(220, 255, 255);
+}
+
+button:active {
+    box-shadow: 0px 0px 10px 0 rgb(0, 255, 255);
+    background-color: rgb(0, 255, 255);
+}
+
+.addAndRemove {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+
+    position: relative;
+    width: 300px;
+    height: 75px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+
+    width: 187px;
+    height: 54px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

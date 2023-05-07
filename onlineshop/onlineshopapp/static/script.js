@@ -9,7 +9,6 @@ $(document).ready(function () {
             data: $(this).serialize(),
             dataType: "json",
             success: function () {
-
             }
         })
         Storage.setItem("username", $("#name").val());
@@ -17,9 +16,5 @@ $(document).ready(function () {
         $("#message").val("");
         $("#successText").css("display", 'block');
     })
-    $("#choice").on("submit", function (event) {
-        console.log("kameni")
-    })
 })
-
 

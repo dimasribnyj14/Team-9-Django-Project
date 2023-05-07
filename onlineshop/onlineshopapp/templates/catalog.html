@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Каталог</h1>
-    <form id = "choice"method="POST">
+    <form id = "choice"method="POST" action = "{% url 'catalog' %}">
         {% csrf_token %}
         <select name = "categoryChange">
             <option value="Monitor">Монітор</option>

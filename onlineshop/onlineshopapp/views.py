@@ -23,7 +23,10 @@ def show_catalog(request):
     return render(request,"catalog.html", context = context)
         
 def show_main(request):
-    return render(request,"main.html")
+    context = {
+        "Recommend": Product.objects.filter(name = "Acer EI272URPbmiiipx (UM.HE2EE.P01)")
+    }
+    return render(request,"main.html",context=context)
         
 def show_support(request):
     if request.method == "POST":
