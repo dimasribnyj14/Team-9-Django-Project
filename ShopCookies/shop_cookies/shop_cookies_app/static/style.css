@@ -10,7 +10,8 @@ img {
     height: 190px;
     border: 0;
     border-radius: 10px;
-
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 5px;
 }
 
 h3 {
@@ -20,7 +21,7 @@ h3 {
 }
 
 p {
-    width: 500px;
+    width: 600px;
 
 }
 
@@ -29,13 +30,13 @@ button {
 }
 
 button:hover {
-    box-shadow: 0px 0px 10px 0 rgb(220, 255, 255);
-    background-color: rgb(220, 255, 255);
+    box-shadow: 0px 0px 10px 0 rgb(255, 232, 149);
+    background-color: rgb(255, 232, 149);
 }
 
 button:active {
-    box-shadow: 0px 0px 10px 0 rgb(0, 255, 255);
-    background-color: rgb(0, 255, 255);
+    box-shadow: 0px 0px 10px 0 rgb(255, 222, 8);
+    background-color: rgb(255, 222, 8);
 }
 
 .addAndRemove {
@@ -69,4 +70,111 @@ button:active {
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    width: 1260px;
+    height: 197px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.count-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    width: 200px;
+    height: 23px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+h1 {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.desc {
+    font-size: 16px;
+}
+
+input {
+    height: 40px;
+    width: 50px;
+    font-size: 24px;
+    transition-duration: 250ms;
+}
+
+input:active {
+    box-shadow: 0px 0px 10px 0 rgb(255, 222, 8);
+    background-color: rgb(255, 222, 8);
+}
+
+.add-cookie {
+    width: 80px;
+    height: 50px;
+}
+
+.plus,
+.minus {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    width: 23px;
+    height: 23px;
+
+    background: #ffa600;
+    box-shadow: 0px 0px 4px rgba(163, 233, 255, 0.2);
+    border-radius: 5px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.remove {
+    margin: 10px;
+    background: #ffa600;
+    width: 90px;
+    height: 40px;
+}
+
+body {
+    background: #ffe7ba;
 }

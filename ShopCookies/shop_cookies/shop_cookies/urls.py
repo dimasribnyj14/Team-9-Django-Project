@@ -21,7 +21,7 @@ from shop_cookies_app.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalog', show_catalog, name = "catalog"),
-    path('basket',show_cart)
+    path('basket',show_cart, name="basket")
 ]
 if DEBUG == True:
     urlpatterns += static(MEDIA_URL, document_root = MEDIA_ROOT)

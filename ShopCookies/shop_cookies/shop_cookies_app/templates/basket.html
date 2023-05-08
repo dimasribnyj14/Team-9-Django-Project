@@ -11,19 +11,26 @@
 <body>
     <h1>Ваш кошик</h1>
     {% for product in products %}
-    <hr>
-    <h2>{{ product.name }}</h2>
-    <img src="{{ product.image.url }}" alt="">
-    <h3>{{ product.price }}$</h3>
-    <form method="POST" class ="deleteCookie"> 
+    <div class ="product"> 
+    <img src="{{ product.0.image.url }}" alt="">
+    <h2>{{ product.0.name }}</h2>
+    
+    <h3>{{ product.0.price }}$</h3>
+    <form method="POST" class ="deleteCookie"action="{% url 'basket' %}"> 
        {% csrf_token %}    
-       <input type="hidden" name="product_pk" value="{{ product.pk}}">
-       <button>Видалити з кошика</button>
+       <div class = "count-product">
+        <button class ="plus {{product.0.name}}"> + </button> 
+        <p id = "{{product.0.name}}"class = "product-count"> кількість продуктів: {{product.1}} </p>
+        <button class ="minus {{product.0.name}}"> - </button> 
+       </div>
+       <input type="hidden" name="product_pk" value="{{ product.0.pk}}">
+       <button class = "remove {{ product.0.name}}">Видалити з кошика</button>
        
     </form>
-
+</div> 
     {% endfor %}
-    <!-- <script src = 'https://code.jquery.com/jquery-3.6.4.js' integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous" defer></script>
-    <script src = '{% static "deleteCookie.js" %}' defer></script> -->
+    <h1 class = "product-price">ціна усіх продуктів: 0 </h1>
+    <script src = 'https://code.jquery.com/jquery-3.6.4.js' integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous" defer></script>
+    <script src = '{% static "deleteCookie.js" %}' defer></script>
 </body>
 </html>
